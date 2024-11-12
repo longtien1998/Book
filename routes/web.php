@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\ProfileController;
@@ -44,4 +45,7 @@ Route::group([
 });
 
 
-
+/* Login & logout  */
+Route::get('admin', [AuthController::class, 'index'])->name('auth.admin');
+Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
