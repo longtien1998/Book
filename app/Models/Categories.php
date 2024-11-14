@@ -22,7 +22,7 @@ class Categories extends Model
             ->where('name', 'LIKE', '%' . $search . '%')
             ->orWhere('description', 'LIKE', '%' . $search . '%')
             ->select('categories.*')
-            ->get();
+            ->paginate(10);
         return $categories;
     }
 

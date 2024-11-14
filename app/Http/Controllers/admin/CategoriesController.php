@@ -197,7 +197,7 @@ class CategoriesController extends Controller
             $categories = Categories::onlyTrashed()
             ->where('name','LIKE', '%' . $query . '%')
             ->orWhere('description','LIKE', '%' . $query . '%')
-            ->get();
+            ->paginate(10);
             if ($categories->isEmpty()) {
                 return redirect()->route('categories.trash.list')->with('error', 'Không tìm thấy thể loại nào phù hợp với từ khóa');
             } else {
