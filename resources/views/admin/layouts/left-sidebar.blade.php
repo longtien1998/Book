@@ -20,6 +20,20 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('categories.list')}}"
+                        aria-expanded="false">
+                        <i class="fa fa-columns" aria-hidden="true"></i>
+                        <span class="hide-menu">Thể loại</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('books.list')}}"
+                        aria-expanded="false">
+                        <i class="fas fa-book"></i>
+                        <span class="hide-menu">Sách</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('basic-table')}}"
                         aria-expanded="false">
                         <i class="fa fa-table" aria-hidden="true"></i>
@@ -31,13 +45,6 @@
                         aria-expanded="false">
                         <i class="fa fa-font" aria-hidden="true"></i>
                         <span class="hide-menu">Icon</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('categories.list')}}"
-                        aria-expanded="false">
-                        <i class="fa fa-columns" aria-hidden="true"></i>
-                        <span class="hide-menu">Thể loại</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

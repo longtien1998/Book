@@ -22,10 +22,11 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:categories',
             'description' => 'nullable',
         ], [
             'name.required' => 'Tên thể loại không được để trống.',
+            'name.unique' => 'Tên thể loại đã tồn tại.',
         ]);
         $category = new Categories();
         $category->name = $request->input('name');
@@ -43,10 +44,11 @@ class CategoriesController extends Controller
     }
     public function update(Request $request, $id) {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:categories',
             'description' => 'nullable',
         ], [
             'name.required' => 'Tên thể loại không được để trống.',
+            'name.unique' => 'Tên thể loại đã tồn tại.',
         ]);
         $category = Categories::find($id);
 
