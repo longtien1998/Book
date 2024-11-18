@@ -71,6 +71,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if (count($categories))
                                 @php $stt = 1; @endphp
                                 @foreach($categories as $category)
                                 <tr>
@@ -91,6 +92,11 @@
                                 </tr>
                                 @php $stt++; @endphp
                                 @endforeach
+                                @else
+                                <tr class="text-center">
+                                    <td colspan="10">Không có dữ liệu</td>
+                                </tr>
+                                @endif
                             </tbody>
                         </table>
                         <div class="pagination-area" style="display: flex; justify-content: center; align-items: center;">

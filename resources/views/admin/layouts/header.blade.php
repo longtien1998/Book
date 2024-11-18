@@ -8,13 +8,13 @@
                 <!-- Logo icon -->
                 <b class="logo-icon">
                     <!-- Dark Logo icon -->
-                    <img src="{{asset ('plugins/images/logo-icon.png')}}" alt="homepage" />
+                    <img width="31" height="30" src="{{asset ('plugins/images/logob.png')}}" alt="homepage" />
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span class="logo-text">
                     <!-- dark Logo text -->
-                    <img src="{{ asset ('plugins/images/logo-text.png') }}" alt="homepage" />
+                    <img src="{{ asset ('plugins/images/logotext.png') }}" alt="homepage" />
                 </span>
             </a>
             <!-- ============================================================== -->
