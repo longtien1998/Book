@@ -30,96 +30,123 @@
         <!-- Start Page Content -->
         <!-- ============================================================== -->
         <!-- Row -->
-        <div class="row">
-            <!-- Column -->
-            <div class="col-lg-4 col-xlg-3 col-md-12">
-                <div class="white-box">
-                    <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
-                        <div class="overlay-box">
-                            <div class="user-content">
-                                <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
-                                        class="thumb-lg img-circle" alt="img"></a>
-                                <h4 class="text-white mt-2">User Name</h4>
-                                <h5 class="text-white mt-2">info@myadmin.com</h5>
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-4 col-xlg-3 col-md-12">
+                    <div class="white-box">
+                        <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
+                            <div class="overlay-box">
+                                <div class="user-content">
+                                    <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
+                                            class="thumb-lg img-circle" alt="img"></a>
+                                    <h4 class="text-white mt-2">{{$user->name}}</h4>
+                                    <h5 class="text-white mt-2">{{$user->email}}</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="user-btm-box mt-5 d-md-flex">
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>258</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>125</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>556</h1>
+                        <div class="user-btm-box mt-5 d-md-flex">
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <h1>258</h1>
+                            </div>
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <h1>125</h1>
+                            </div>
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <h1>556</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Column -->
-            <!-- Column -->
-            <div class="col-lg-8 col-xlg-9 col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="form-horizontal form-material">
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Full Name</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" placeholder="Johnathan Doe"
-                                        class="form-control p-0 border-0"> </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="example-email" class="col-md-12 p-0">Email</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="email" placeholder="johnathan@admin.com"
-                                        class="form-control p-0 border-0" name="example-email"
-                                        id="example-email">
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-lg-8 col-xlg-9 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form-horizontal form-material" action="{{ route('profile.update') }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Tên</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="name" value="{{ old('name', $user->name) }}"
+                                            class="form-control p-0 border-0">
+                                        @error('name')
+                                            <div class="text-danger pt-2">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Password</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="password" value="password" class="form-control p-0 border-0">
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Phone No</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" placeholder="123 456 7890"
-                                        class="form-control p-0 border-0">
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Message</label>
-                                <div class="col-md-12 border-bottom p-0">
-                                    <textarea rows="5" class="form-control p-0 border-0"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="col-sm-12">Select Country</label>
 
-                                <div class="col-sm-12 border-bottom">
-                                    <select class="form-select shadow-none p-0 border-0 form-control-line">
-                                        <option>London</option>
-                                        <option>India</option>
-                                        <option>Usa</option>
-                                        <option>Canada</option>
-                                        <option>Thailand</option>
-                                    </select>
+                                <div class="form-group mb-4">
+                                    <label for="example-email" class="col-md-12 p-0">Email</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" value="{{ old('email', $user->email) }}"
+                                            class="form-control p-0 border-0" name="email"
+                                            id="example-email">
+                                        @error('email')
+                                            <div class="text-danger pt-2">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group mb-4">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-success">Update Profile</button>
+
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Mật khẩu</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="password" name="password" value="" class="form-control p-0 border-0">
+                                        @error('password')
+                                            <div class="text-danger pt-2">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Nhập lại mật khẩu</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="password" name="password_confirmation" value="" class="form-control p-0 border-0">
+                                        @error('password_confirmation')
+                                            <div class="text-danger pt-2">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Số điện thoại</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="number" name="phone" value="{{ old('phone', $user->phone) }}" placeholder="0123456789"
+                                            class="form-control p-0 border-0">
+                                            @error('phone')
+                                            <div class="text-danger">{{ $message }}</div>
+                                             @enderror
+
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="col-md-12 p-0">Địa chỉ</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="text" name="address" value="{{ old('address', $user->address) }}" placeholder="Địa chỉ của bạn"
+                                            class="form-control p-0 border-0">
+                                    </div>
+                                </div>
+                                {{-- <div class="form-group mb-4">
+                                    <label class="col-sm-12">Chức năng</label>
+
+                                    <div class="col-sm-12 border-bottom">
+                                        <select class="form-select shadow-none p-0 border-0 form-control-line">
+                                            <option>Quản trị viên</option>
+                                            <option>Người dùng</option>
+                                        </select>
+                                    </div>
+                                </div> --}}
+                                <div class="form-group mb-4">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Cập nhật</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <!-- Column -->
             </div>
-            <!-- Column -->
-        </div>
         <!-- Row -->
         <!-- ============================================================== -->
         <!-- End PAge Content -->

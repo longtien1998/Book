@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
-// use App\Http\Controllers\admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\BooksController;
 use App\Http\Controllers\admin\UserController;
@@ -28,6 +28,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/fontawesome', [HomeController::class, 'fontawesome'])->name('fontawesome');
     Route::get('/basic-table', [HomeController::class, 'basic_table'])->name('basic-table');
 
+    Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile');
+    Route::put('profile', [AdminProfileController::class, 'update'])->name('profile.update');
     // Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile');
     // Route::get('/admin/profile/edit', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
 
