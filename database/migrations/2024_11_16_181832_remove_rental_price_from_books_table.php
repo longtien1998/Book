@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->dropColumn('rental_price'); // Xóa cột 'rental_price'
+            // $table->dropColumn('rental_price'); // Xóa cột 'rental_price'
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->decimal('rental_price', 8, 2)->nullable(); // Hoàn tác: thêm lại cột 'rental_price'
+            // $table->decimal('rental_price', 8, 2)->nullable(); // Hoàn tác: thêm lại cột 'rental_price'
         });
     }
 };
