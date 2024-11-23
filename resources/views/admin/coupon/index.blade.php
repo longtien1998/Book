@@ -57,10 +57,10 @@
                                         <td>{{$coupon->number}}</td>
                                         <td>
                                             <?php
-                                                if ($coupon ->status == 0){
+                                                if ($coupon ->status == 1){
                                                     ?>
                                                     <div class="form-switch">
-                                                    <input class="form-check-input status js-switch" type="checkbox">
+                                                    <input class="form-check-input status js-switch" type="checkbox" checked>
                                                 </div>
                                                     <?php
                                                 }else {
