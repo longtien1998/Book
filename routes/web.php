@@ -7,6 +7,8 @@ use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\BooksController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\AdvertisementController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -113,6 +115,36 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::get('/{id}/destroy',  'destroy_trash_users')->name('destroy');
 
         });
+    });
+
+        //Quảng cáo
+        Route::group([
+            'prefix' => 'advertisements',
+            'controller' => AdvertisementController::class,
+            'as' => 'advertisements.',
+        ], function () {
+            Route::get('/index',  'index')->name('index');
+            Route::get('/create',  'create')->name('create');
+            Route::post('/store',  'store')->name('store');
+            Route::get('/edit/{id}',  'edit')->name('edit');
+            Route::put('/update/{id}',  'update')->name('update');
+            Route::delete('/{id}/delete',  'delete')->name('delete');
+            Route::post('/delete-list',  'delete_list_advertisement')->name('delete-list');
+            Route::post('/search',  'search')->name('search');
+
+            Route::group([
+                'prefix' => 'trash',
+                'as' => 'trash.',
+            ], function () {
+                Route::get('/list',  'list_trash_advertisement')->name('list');
+                Route::post('/search',  'search_trash')->name('search');
+                Route::post('/restore',  'restore_trash_advertisement')->name('restore');
+                Route::get('/restore-all',  'restore_all_advertisement')->name('restore-all');
+                Route::post('/delete',  'delete_trash_advertisement')->name('delete');
+                Route::get('/{id}/destroy',  'destroy_trash_advertisement')->name('destroy');
+
+            });
+
 
     });
 });

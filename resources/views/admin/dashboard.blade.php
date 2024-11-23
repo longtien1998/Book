@@ -32,33 +32,33 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-12">
                 <div class="white-box analytics-info">
-                    <h3 class="box-title">Total Visit</h3>
+                    <h3 class="box-title">Tổng số lượng sách</h3>
                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                         <li>
                             <div id="sparklinedash"><canvas width="67" height="30"
                                     style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                             </div>
                         </li>
-                        <li class="ms-auto"><span class="counter text-success">659</span></li>
+                        <li class="ms-auto"><span class="counter text-success">{{$totalBook}}</span></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="white-box analytics-info">
-                    <h3 class="box-title">Total Page Views</h3>
+                    <h3 class="box-title">Tổng số lượng tài khoản</h3>
                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                         <li>
                             <div id="sparklinedash2"><canvas width="67" height="30"
                                     style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                             </div>
                         </li>
-                        <li class="ms-auto"><span class="counter text-purple">869</span></li>
+                        <li class="ms-auto"><span class="counter text-purple">{{$totalUser}}</span></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="white-box analytics-info">
-                    <h3 class="box-title">Unique Visitor</h3>
+                    <h3 class="box-title">Tổng số lượng đơn hàng</h3>
                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                         <li>
                             <div id="sparklinedash3"><canvas width="67" height="30"
@@ -90,7 +90,7 @@
                     </div>
                     <div id="ct-visits" style="height: 405px;">
                         <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
-                                class="chartist-tooltip-value">6</span>
+                                class="chartist-tooltip-value">{{$totalUser}}</span>
                         </div>
                     </div>
                 </div>

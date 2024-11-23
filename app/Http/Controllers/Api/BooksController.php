@@ -16,7 +16,7 @@ class BooksController extends Controller
         }
         return response()->json($books, 200);
     }
-    
+
     // Lấy thông tin sách theo ID
     public function show($id)
     {
@@ -39,5 +39,11 @@ class BooksController extends Controller
         }
 
         return response()->json($books, 200);
+    }
+    public function getStatisticData(){
+        $data = Books::selectRaw('category_id, COUNT(*) as count')
+        ->groupBy('category_id')
+        ->get();
+        return response()->json($data, 200);
     }
 }
