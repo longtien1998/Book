@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\BooksController;
+use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\AdvertisementController;
 
@@ -149,5 +150,18 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
     });
+
+    Route::prefix('coupon')->group(function () {
+        Route::get('index', [CouponController::class, 'index'])->name('coupon.index');
+        Route::get('create', [CouponController::class, 'create'])->name('coupon.create');
+        Route::post('store', [CouponController::class, 'store'])->name('coupon.store');
+        Route::get('edit/{id}', [CouponController::class, 'edit'])->name('coupon.edit');
+        Route::post('update/{id}', [CouponController::class, 'update'])->name('coupon.update');
+        Route::delete('destroy/{id}', [CouponController::class, 'destroy'])->name('coupon.destroy');
+        Route::post('find', [CouponController::class, 'find'])->name('coupon.find');
+    });
+         
+    
+    
 });
 require __DIR__.'/auth.php';
