@@ -72,7 +72,7 @@ class CouponController extends Controller{
                         ->orWhere('code', 'LIKE', '%' . $query . '%')
                         ->paginate(10); 
             if ($coupons->isEmpty()) {
-                return redirect()->route('users.list')->with('error', 'Không tìm thấy tài khoản nào phù hợp với từ khóa');
+                return redirect()->route('coupon.index')->with('error', 'Không tìm thấy tài khoản nào phù hợp với từ khóa');
             } else {
                 return view('admin.coupon.index', compact('coupons'));
             }

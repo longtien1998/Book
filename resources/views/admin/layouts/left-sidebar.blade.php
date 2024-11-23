@@ -68,12 +68,18 @@
                         <span class="hide-menu">Error 404</span>
                     </a>
                 </li>
-
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('coupon.index') }}"
                         aria-expanded="false">
                         <i class="fa fa-gift" aria-hidden="true"></i>
                         <span class="hide-menu">Coupon</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('order.index') }}"
+                        aria-expanded="false">
+                        <i class="fa fa-cube" aria-hidden="true"></i>
+                        <span class="hide-menu">Đơn hàng</span>
                     </a>
                 </li>
             </ul>

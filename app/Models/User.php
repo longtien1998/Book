@@ -59,4 +59,8 @@ class User extends Authenticatable
             ->paginate(10);
         return $users;
     }
+
+    public function orders(){
+        return $this->hasMany(Order::class, 'user_id', 'id');
+    }
 }
