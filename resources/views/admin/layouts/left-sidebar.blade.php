@@ -41,6 +41,13 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('advertisements.index')}}"
+                        aria-expanded="false">
+                        <i class="fab fa-adversal"></i>
+                        <span class="hide-menu">Quảng cáo</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('basic-table')}}"
                         aria-expanded="false">
                         <i class="fa fa-table" aria-hidden="true"></i>

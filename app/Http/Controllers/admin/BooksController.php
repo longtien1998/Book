@@ -218,12 +218,12 @@ class BooksController extends Controller
                 ->where('title', 'LIKE', '%' . $query . '%')
                 ->paginate(10);
             if ($books->isEmpty()) {
-                return redirect()->route('books.trash.list')->with('error', 'Không tìm thấy thể loại nào phù hợp với từ khóa');
+                return redirect()->route('books.trash.list')->with('error', 'Không tìm thấy sách nào phù hợp với từ khóa');
             } else {
                 return view('admin.books.list-trash', compact('books'));
             }
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Có lỗi xảy ra. Không tìm thấy thể loại nào phù hợp với từ khóa.');
+            return redirect()->back()->with('error', 'Có lỗi xảy ra. Không tìm thấy sách nào phù hợp với từ khóa.');
         }
     }
 }
