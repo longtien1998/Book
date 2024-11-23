@@ -1,0 +1,6 @@
+.ht-3 {
+    height: 20px !important;
+    line-height: 18px; /* Căn giữa text */
+    padding: 0 10px; /* Tùy chỉnh khoảng cách bên trong */
+    font-size: 12px; /* Điều chỉnh kích thước chữ để phù hợp */
+}
