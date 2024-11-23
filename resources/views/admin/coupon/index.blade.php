@@ -66,7 +66,7 @@
                                                 }else {
                                                     ?>
                                                     <div class="form-switch">
-                                                        <input class="form-check-input status js-switch" type="checkbox" checked>
+                                                        <input class="form-check-input status js-switch" type="checkbox" >
                                                     </div>
                                                     <?php
                                                 }
