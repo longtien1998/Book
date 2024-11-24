@@ -9,7 +9,8 @@ use App\Http\Controllers\admin\BooksController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\AdvertisementController;
-
+use App\Http\Controllers\admin\CommentController;
+use App\Http\Controllers\CommentController as UserCommentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Comment
+    Route::get('books/{bookId}/comments', [UserCommentController::class, 'getBookComments']);
+    Route::post('comments', [UserCommentController::class, 'store']);
+    Route::put('comments/{id}', [UserCommentController::class, 'update']);
+    Route::delete('comments/{id}', [UserCommentController::class, 'destroy']);
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -160,8 +167,30 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::delete('destroy/{id}', [CouponController::class, 'destroy'])->name('coupon.destroy');
         Route::post('find', [CouponController::class, 'find'])->name('coupon.find');
     });
-         
-    
-    
+
+    Route::group([
+        'prefix' => 'comments',
+        'controller' => CommentController::class,
+        'as' => 'comments.',
+    ], function () {
+        Route::get('/list',  'index')->name('list');
+        Route::delete('/{id}/delete',  'delete')->name('delete');
+        Route::post('/delete-list',  'delete_list_comments')->name('delete-list');
+        Route::post('/search',  'search')->name('search');
+
+        Route::group([
+            'prefix' => 'trash',
+            'as' => 'trash.',
+        ], function () {
+            Route::get('/list',  'list_trash_comments')->name('list');
+            Route::post('/search',  'search_trash')->name('search');
+            Route::post('/restore',  'restore_trash_comments')->name('restore');
+            Route::get('/restore-all',  'restore_all_comments')->name('restore-all');
+            Route::post('/delete',  'delete_trash_comments')->name('delete');
+            Route::get('/{id}/destroy',  'destroy_trash_comments')->name('destroy');
+
+        });
+    });
+
 });
 require __DIR__.'/auth.php';

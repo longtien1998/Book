@@ -76,6 +76,14 @@
                         <span class="hide-menu">Coupon</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('comments.list') }}"
+                        aria-expanded="false">
+                        <i class=" fas fa-comment-dots" aria-hidden="true"></i>
+                        <span class="hide-menu">Bình luận</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
