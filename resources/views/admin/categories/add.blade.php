@@ -39,13 +39,13 @@
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Tên thể loại</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" name="name" placeholder="Thể loại 1"class="form-control p-0 border-0">
+                                    <input type="text" name="name" placeholder="Thể loại 1"class="form-control p-0 border-0" value="{{old('name')}}">
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="example-email" class="col-md-12 p-0">Mô tả</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" placeholder="Mô tả thể loại" class="form-control p-0 border-0" name="description">
+                                    <input type="text" placeholder="Mô tả thể loại" class="form-control p-0 border-0" name="description" value="{{old('description')}}">
                                 </div>
                             </div>
                             <div class="form-group mb-4">

@@ -58,14 +58,45 @@
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="white-box analytics-info">
-                    <h3 class="box-title">Tổng số lượng đơn hàng</h3>
+                    <h3 class="box-title">Tổng số lượng quảng cáo</h3>
                     <ul class="list-inline two-part d-flex align-items-center mb-0">
                         <li>
                             <div id="sparklinedash3"><canvas width="67" height="30"
                                     style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                             </div>
                         </li>
-                        <li class="ms-auto"><span class="counter text-info">911</span>
+                        <li class="ms-auto"><span class="counter text-info">{{$totalAds}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">Tổng số lượng quảng cáo</h3>
+                    <ul class="list-inline two-part d-flex align-items-center mb-0">
+                        <li>
+                            <div id="sparklinedash4"><canvas width="67" height="30"
+                                    style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                            </div>
+                        </li>
+                        <li class="ms-auto"><span class="counter text-info">{{$totalAds}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">Tổng số lượng thể loại</h3>
+                    <ul class="list-inline two-part d-flex align-items-center mb-0">
+                        <li>
+                            <div id="sparklinedash5"><canvas width="67" height="30"
+                                    style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                            </div>
+                        </li>
+                        <li class="ms-auto"><span class="counter text-info">{{$totalCategory}}</span>
                         </li>
                     </ul>
                 </div>

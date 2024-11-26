@@ -35,33 +35,33 @@
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Tiêu đề quảng cáo</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="text" name="title" placeholder="Nhập tiêu đề" class="form-control p-0 border-0">
+                                        <input type="text" name="title" placeholder="Nhập tiêu đề" class="form-control p-0 border-0" value="{{old('title')}}">
                                     </div>
                                 </div>
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Liên kết (URL)</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="url" name="url" placeholder="https://example.com" class="form-control p-0 border-0">
+                                        <input type="url" name="url" placeholder="https://example.com" class="form-control p-0 border-0" value="{{old('url')}}">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Mô tả</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <textarea name="description" class="form-control p-0 border-0" placeholder="Mô tả ngắn gọn về quảng cáo" rows="4"></textarea>
+                                    <textarea name="description" class="form-control p-0 border-0" placeholder="Mô tả ngắn gọn về quảng cáo" rows="4">{{ old('description') }}</textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Ngày bắt đầu</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="date" name="start_date" class="form-control p-0 border-0">
+                                        <input type="date" name="start_date" class="form-control p-0 border-0" value="{{old('start_date')}}">
                                     </div>
                                 </div>
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Ngày kết thúc</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="date" name="end_date" class="form-control p-0 border-0">
+                                        <input type="date" name="end_date" class="form-control p-0 border-0" value="{{old('end_date')}}">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Trạng thái</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <select name="is_active" class="form-select shadow-none p-0 border-0 form-control-line">
+                                        <select name="is_active" class="form-select shadow-none p-0 border-0 form-control-line" value="{{old('is_active')}}">
                                             <option value="1">Hoạt động</option>
                                             <option value="0">Không hoạt động</option>
                                         </select>
@@ -78,7 +78,7 @@
                                 <div class="form-group col-xl-6 mb-4">
                                     <label class="col-md-12 p-0">Hình ảnh</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                        <input type="file" name="image_path" class="form-control p-0 border-0">
+                                        <input type="file" name="image_path" class="form-control p-0 border-0" value="{{old('image_path')}}">
                                     </div>
                                 </div>
                             </div>

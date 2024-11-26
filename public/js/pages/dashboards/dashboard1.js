@@ -69,6 +69,14 @@ $(function () {
             barSpacing: '5',
             barColor: '#f33155'
         });
+        $('#sparklinedash5').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
+            type: 'bar',
+            height: '30',
+            barWidth: '4',
+            resize: true,
+            barSpacing: '5',
+            barColor: '#FF00FF'
+        });
     }
     var sparkResize;
     $(window).on("resize", function (e) {

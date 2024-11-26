@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" action="{{route('users.update', $user->id)}}" method="POST">
+                        <form class="form-horizontal form-material" action="{{route('users.update', $user->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -81,7 +81,12 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="form-group col-xl-12 mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Hình ảnh</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="file" class="form-control p-0 border-0" name="avatar">
+                                </div>
+                            </div>
                             <div class="form-group mb-4">
                                 <div class="col-sm-12 text-end">
                                     <button class="btn btn-success">Cập nhật</button>
