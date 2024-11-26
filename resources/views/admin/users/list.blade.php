@@ -66,6 +66,7 @@
                                     <th><input type="checkbox" name="" id="check_all_list" class=""></th>
                                     <th class="border-top-0">ID</th>
                                     <th class="border-top-0">Tên tài khoản</th>
+                                    <th class="border-top-0">Hình ảnh</th>
                                     <th class="border-top-0">Quyền</th>
                                     <th class="border-top-0">Hành động</th>
                                 </tr>
@@ -78,6 +79,13 @@
                                     <td><input type="checkbox" class="check_list" value="{{$user->id}}"></td>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
+                                    <td>
+                                        @if ($user->avatar)
+                                        <img src="{{asset('upload/users/'.$user->avatar)}}" alt="" width="50" height="50">
+                                        @else
+                                        Không có hình ảnh hiển thị
+                                        @endif
+                                    </td>
                                     <td>{{$user->role}}</td>
                                     <td>
                                         <a href="{{route('users.edit', $user->id)}}" class="me-2"><i class="fas fa-edit"></i></a>

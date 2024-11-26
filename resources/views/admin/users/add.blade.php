@@ -88,6 +88,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group col-xl-4 mb-4">
+                                    <label for="example-email" class="col-md-12 p-0">Hình ảnh</label>
+                                    <div class="col-md-12 border-bottom p-0">
+                                        <input type="file" class="form-control p-0 border-0" name="avatar" value="{{ old('avatar') }}">
+                                    </div>
+                                </div>
                             </div>
 
                             {{-- <div class="form-group mb-4">
