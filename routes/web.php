@@ -9,8 +9,12 @@ use App\Http\Controllers\admin\BooksController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\AdvertisementController;
+
+use App\Http\Controllers\admin\OrderController;
+
 use App\Http\Controllers\admin\CommentController;
 use App\Http\Controllers\CommentController as UserCommentController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -168,6 +172,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post('find', [CouponController::class, 'find'])->name('coupon.find');
     });
 
+    Route::prefix('order')->group(function () {
+        Route::get('index', [OrderController::class, 'index'])->name('order.index');
+        Route::post('store', [OrderController::class, 'store'])->name('order.store');
+        Route::get('edit/{id}', [OrderController::class, 'edit'])->name('order.edit');
+        Route::post('update/{id}', [OrderController::class, 'update'])->name('order.update');
+        Route::delete('destroy/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
+        Route::post('find', [OrderController::class, 'find'])->name('order.find');
+    });
+    
     Route::group([
         'prefix' => 'comments',
         'controller' => CommentController::class,

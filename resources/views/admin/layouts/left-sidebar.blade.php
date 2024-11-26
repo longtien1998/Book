@@ -68,7 +68,6 @@
                         <span class="hide-menu">Error 404</span>
                     </a>
                 </li>
-
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('coupon.index') }}"
                         aria-expanded="false">
@@ -76,12 +75,12 @@
                         <span class="hide-menu">Coupon</span>
                     </a>
                 </li>
-
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('comments.list') }}"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('order.index') }}"
                         aria-expanded="false">
-                        <i class=" fas fa-comment-dots" aria-hidden="true"></i>
-                        <span class="hide-menu">Bình luận</span>
+                        <i class="fa fa-cube" aria-hidden="true"></i>
+                        <span class="hide-menu">Đơn hàng</span>
+
                     </a>
                 </li>
             </ul>
